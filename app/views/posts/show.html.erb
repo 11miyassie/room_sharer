@@ -1,2 +1,48 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<%# 商品の概要 %>
+<div class="post-show">
+  <div class="post-box">
+    <h2 class="title">
+      <%= @post.title %>
+    </h2>
+    <div class='post-img-content'>
+      <%= image_tag @post.image ,class:"post-box-img" %>
+    </div>
+    <div class="post-price-box">
+      <span class="post-price">
+        ¥ <%= @post.price%>
+      </span>
+    </div>
+
+    <%# ログインしているユーザーと投稿しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+    <% if user_signed_in? && current_user.id == @post.user_id%>
+      <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-red-btn" %>
+      <p class='or-text'>or</p>
+      <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
+    <% end %>
+
+    <%# 商品が売れていない場合はこちらを表示しましょう %>
+    <% if user_signed_in? && current_user.id != @post.user_id %>
+      <%= link_to '質問する', post_orders_path(@post.id) ,class:"post-red-btn"%>
+    <% end %>
+    <%# //商品が売れていない場合はこちらを表示しましょう %>
+
+
+    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+      <div class="post-explain-box">
+        <span><%= @post.explain %></span>
+      </div>
+      <table class="detail-table">
+        <tbody>
+          <tr>
+            <th class="detail-post">投稿者</th>
+            <td class="detail-value"><%= @post.user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">都道府県</th>
+            <td class="detail-value"><%= @post.prefecture.name %></td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  <%# /商品の概要 %>
+</div>
