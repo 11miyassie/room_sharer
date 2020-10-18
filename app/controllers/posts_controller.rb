@@ -1,11 +1,19 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.includes(:user).order("created_at DESC")
   end
 
   def new
+    @post = Post.new
   end
 
   def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,5 +26,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:image, :title, :explain, :prefecture_id, :local, :price, :building, :other).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 end
