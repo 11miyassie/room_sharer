@@ -1,24 +1,81 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# テーブル設計
 
-Things you may want to cover:
+## users テーブル
 
-* Ruby version
+| Column           | Type   | Options     |
+| ---------------- | ------ | ----------- |
+| nickname         | string | null: false |
+| email            | string | null: false |
+| password         | string | null: false |
+| gender           | string | null: false |
+| birthday         | date   | null: false |
 
-* System dependencies
+### Association
 
-* Configuration
+- has_many :posts
+- has_many :messages
+- has_many :rooms, through: :room_users
+- has_many :room_users
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+## posts テーブル
 
-* Services (job queues, cache servers, search engines, etc.)
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| explain       | text       | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| local         | text       | null: false                    |
+| price         | integer    | null: false                    |
+| building      | string     | null: false                    |
+| other         | string     |                                |
+| user          | references | null: false, foreign_key: true |
 
-* Deployment instructions
+### Association
 
-* ...
+- belongs_to :user
+
+
+
+## rooms テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| name    | string     | null: false                    |
+
+### Association
+- has_many :room_users
+- has_many :messages, dependent: :destroy
+- has_many :users, through: :room_users. dependent: :destroy
+
+
+
+## messsages テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| content      | text       | null: false                    |
+| room         | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
+
+
+
+## room_users 中間テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| room         | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :room
