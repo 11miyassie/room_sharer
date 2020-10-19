@@ -8,7 +8,6 @@ class RoomsController < ApplicationController
     end
 
     @room = Room.new
-    # @room = Room.new(params[post.user_id])
   end
 
   def create
