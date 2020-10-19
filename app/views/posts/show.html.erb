@@ -13,24 +13,28 @@
       </span>
     </div>
 
-    <%# ログインしているユーザーと投稿しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
+    <%# 投稿者が見てる場合のみこちらを表示 %>
     <% if user_signed_in? && current_user.id == @post.user_id%>
       <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
     <% end %>
+    <%# //投稿者が見てる場合のみこちらを表示 %>
 
-    <%# 商品が売れていない場合はこちらを表示しましょう %>
-    <% if user_signed_in? && current_user.id != @post.user_id %>
+
+    <%# 投稿者以外が見てる場合はこちらを表示。ログアウト状態でも見れる %>
+    <% if current_user.id != @post.user_id %>
       <%= link_to '質問する', post_orders_path(@post.id) ,class:"post-red-btn"%>
     <% end %>
-    <%# //商品が売れていない場合はこちらを表示しましょう %>
+    <%# //投稿者以外が見てる場合はこちらを表示 ログアウト状態でも見れる%>
 
-
-    <%# //ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
       <div class="post-explain-box">
         <span><%= @post.explain %></span>
       </div>
+      <div class="post-other--box">
+        <span><%= @post.other %></span>
+      </div>
+
       <table class="detail-table">
         <tbody>
           <tr>
@@ -40,6 +44,14 @@
           <tr>
             <th class="detail-post">都道府県</th>
             <td class="detail-value"><%= @post.prefecture.name %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">地域</th>
+            <td class="detail-value"><%= @post.local %></td>
+          </tr>
+          <tr>
+            <th class="detail-post">建物タイプ</th>
+            <td class="detail-value"><%= @post.building %></td>
           </tr>
         </tbody>
       </table>
