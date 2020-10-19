@@ -1,2 +1,79 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="posts-sell-contents">
+
+  <div class="posts-sell-main">
+    <h2 class="posts-sell-title">物件の情報を入力</h2>
+    <%= form_with model: @post, url:post_path, local: true do |f| %>
+
+    <%# <%= render 'shared/error_messages', model: f.object %> %>
+
+    <%# 画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        画像
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"post-image" %>
+      </div>
+    </div>
+    <%# /画像 %>
+    
+    <%# タイトルと説明 %>
+    <div class="new-posts">
+      <div class="weight-bold-text">
+        タイトル
+      </div>
+      <%= f.text_field :title, class:"posts-text", id:"post-title", placeholder:"タイトル（40文字まで)", maxlength:"40" %>
+      <div class="posts-explain">
+        <div class="weight-bold-text">
+          物件説明
+        </div>
+        <%= f.text_area :explain, class:"posts-text", id:"post-info", placeholder:"物件説明（1,000文字まで）" ,rows:"7" ,maxlength:"1000" %>
+        <div class="weight-bold-text">
+          その他説明
+        </div>
+        <%= f.text_area :other, class:"posts-text", id:"post-other-info", placeholder:"その他説明（1,000文字まで）" ,rows:"4" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /タイトルと説明 %>
+
+    <%# 投稿の詳細 %>
+    <div class="posts-detail">
+      <div class="form">
+        <div class="weight-bold-text">
+          都道府県
+        </div>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"post-prefecture"}) %>
+        <div class="weight-bold-text">
+          地域
+        </div>
+        <%= f.text_field :local, class:"posts-text", id:"post-local", placeholder:"お住まいの地域（60文字まで)", maxlength:"60" %>
+        <div class="weight-bold-text">
+          建物の形式
+        </div>
+        <%= f.text_field :building, class:"posts-text", id:"post-building", placeholder:"建物の形式（マンション、一軒家など)", maxlength:"40" %>
+      </div>
+    </div>
+    <%# /投稿の詳細 %>
+
+    <%# 価格 %>
+    <div class="price-content">
+      <div class="price-text">
+        <span>価格</span>
+      </div>
+      <span class="sell-yen">¥</span>
+      <%= f.text_field :price, class:"price-input", id:"post-price", placeholder:"例）10000" %>
+    </div>
+    <%# /販売価格 %>
+
+    <%# 下部ボタン %>
+    <div class="sell-btn-contents">
+      <%= f.submit "編集する", class:"sell-btn"%>
+      <%=link_to 'もどる', post_path, class:"back-btn" %>
+    </div>
+    <%# /下部ボタン %>
+  </div>
+  <% end %>
+</div>

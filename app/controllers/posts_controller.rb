@@ -20,12 +20,20 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if user_signed_in? == false || @post.user_id != current_user.id
+      return redirect_to root_path
+    end
   end
 
   def show
   end
 
   def update
+    if @post.update(post_params)
+      redirect_to post_path
+    else
+      render :edit
+    end
   end
 
   def destroy
