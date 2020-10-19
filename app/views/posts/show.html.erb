@@ -12,21 +12,20 @@
         ¥ <%= @post.price%>
       </span>
     </div>
-
-    <%# 投稿者が見てる場合のみこちらを表示 %>
+    
+    <%# ログイン状態か、投稿者と自分のユーザーIDが同じかで表示を変える%>
+      <%# 投稿者が見てる場合のみこちらを表示 %>
     <% if user_signed_in? && current_user.id == @post.user_id%>
       <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
+      <%# //投稿者が見てる場合のみこちらを表示 %>
+      <%# 投稿者以外が見てる場合はこちらを表示。ログアウト状態でも見れる %>
+    <% else %>
+      <%= link_to '質問する', post_path(@post.id) ,class:"post-red-btn"%>
     <% end %>
-    <%# //投稿者が見てる場合のみこちらを表示 %>
-
-
-    <%# 投稿者以外が見てる場合はこちらを表示。ログアウト状態でも見れる %>
-    <% if current_user.id != @post.user_id %>
-      <%= link_to '質問する', post_orders_path(@post.id) ,class:"post-red-btn"%>
-    <% end %>
-    <%# //投稿者以外が見てる場合はこちらを表示 ログアウト状態でも見れる%>
+      <%# //投稿者以外が見てる場合はこちらを表示 ログアウト状態でも見れる%>
+    <%# //ログイン状態か、投稿者と自分のユーザーIDが同じかで表示を変える%>
 
       <div class="post-explain-box">
         <span><%= @post.explain %></span>
