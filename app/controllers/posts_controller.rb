@@ -37,6 +37,16 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    if user_signed_in? == false || @post.user_id != current_user.id
+      return redirect_to post_path
+    end
+
+    if @post.destroy
+      redirect_to posts_path
+    else
+      render :show
+    end
+
   end
 
   private
