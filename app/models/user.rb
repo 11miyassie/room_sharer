@@ -15,9 +15,7 @@ class User < ApplicationRecord
   enum gender: { man: 0, woman: 1, other: 2}
 
   has_many :posts
-  has_many :messages
-  has_many :rooms, through: :room_users
-  has_many :room_users
+  has_many :comments
 end
 
 #email validation, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
