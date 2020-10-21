@@ -4,7 +4,4 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts
-  resources :rooms, only: [:index, :new, :create, :destroy] do
-    resources :messages, only: [:index, :create]
-  end
 end
