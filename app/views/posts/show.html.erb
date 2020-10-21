@@ -13,47 +13,67 @@
       </span>
     </div>
     
-    <%# ログイン状態か、投稿者と自分のユーザーIDが同じかで表示を変える%>
-      <%# 投稿者が見てる場合のみこちらを表示 %>
+    <%# 投稿者が見てる場合のみこちらを表示 %>
     <% if user_signed_in? && current_user.id == @post.user_id%>
       <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-red-btn" %>
       <p class='or-text'>or</p>
       <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
-      <%# //投稿者が見てる場合のみこちらを表示 %>
-      <%# 投稿者以外が見てる場合はこちらを表示。ログアウト状態でも見れる %>
-    <% else %>
-      <%= link_to '質問する', root_path, class:"post-red-btn"%>
     <% end %>
-      <%# //投稿者以外が見てる場合はこちらを表示 ログアウト状態でも見れる%>
-    <%# //ログイン状態か、投稿者と自分のユーザーIDが同じかで表示を変える%>
+    <%# //投稿者が見てる場合のみこちらを表示 %>
 
-      <div class="post-explain-box">
-        <span><%= @post.explain %></span>
-      </div>
-      <div class="post-other--box">
-        <span><%= @post.other %></span>
-      </div>
+    <div class="post-explain-box">
+      <span><%= @post.explain %></span>
+    </div>
+    <div class="post-other--box">
+      <span><%= @post.other %></span>
+    </div>
 
-      <table class="detail-table">
-        <tbody>
-          <tr>
-            <th class="detail-post">投稿者</th>
-            <td class="detail-value"><%= @post.user.nickname %></td>
-          </tr>
-          <tr>
-            <th class="detail-post">都道府県</th>
-            <td class="detail-value"><%= @post.prefecture.name %></td>
-          </tr>
-          <tr>
-            <th class="detail-post">地域</th>
-            <td class="detail-value"><%= @post.local %></td>
-          </tr>
-          <tr>
-            <th class="detail-post">建物タイプ</th>
-            <td class="detail-value"><%= @post.building %></td>
-          </tr>
-        </tbody>
-      </table>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-post">投稿者</th>
+          <td class="detail-value"><%= @post.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">都道府県</th>
+          <td class="detail-value"><%= @post.prefecture.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">地域</th>
+          <td class="detail-value"><%= @post.local %></td>
+        </tr>
+        <tr>
+          <th class="detail-post">建物タイプ</th>
+          <td class="detail-value"><%= @post.building %></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="container">
+    <% if user_signed_in? %>
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "SEND" %>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの閲覧、投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+    <div class="comments">
+      <h4>＜コメント一覧＞</h4>
+    <% if user_signed_in? == false %>
+      <strong><p>※※※ ---------------------------------------- ※※※</p></strong>
+    <% elsif @comments.length == 0 %>
+      <strong><p>※※※ コメントはまだありません。一番乗りしましょう！ ※※※</p></strong>
+    <% else %>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= comment.user.nickname %>：</strong>
+          <%= comment.text %>
+        </p>
+      <% end %>
+    <% end %>
+    </div>
   </div>
   <%# /商品の概要 %>
 </div>
+
+<%#69行目 マイページ実装後 <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %> %>

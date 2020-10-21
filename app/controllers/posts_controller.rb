@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :destroy, :update]
+  before_action :move_to_show, only: [:edit, :destroy, :update]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -21,11 +22,13 @@ class PostsController < ApplicationController
 
   def edit
     if user_signed_in? == false || @post.user_id != current_user.id
-      return redirect_to root_path
+      redirect_to action: :show
     end
   end
 
   def show
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
 
   def update
@@ -37,16 +40,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if user_signed_in? == false || @post.user_id != current_user.id
-      return redirect_to post_path
-    end
-
     if @post.destroy
       redirect_to posts_path
     else
       render :show
     end
-
   end
 
   private
@@ -57,5 +55,11 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def move_to_show
+    if user_signed_in? == false || @post.user_id != current_user.id
+      redirect_to action: :show
+    end
   end
 end
