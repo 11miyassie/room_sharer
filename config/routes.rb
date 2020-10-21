@@ -4,7 +4,4 @@ Rails.application.routes.draw do
 
   resources :users
   resources :posts
-  resources :rooms do
-    resources :messages
-  end
 end
