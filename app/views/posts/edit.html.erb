@@ -52,19 +52,13 @@
           建物
         </div>
         <%= f.text_field :building, class:"posts-text", id:"post-building", placeholder:"建物の形式（マンション、一軒家など)", maxlength:"40" %>
+        <div class="weight-bold-text">
+          価格 ¥
+        </div>
+        <%= f.text_field :price, class:"posts-text", id:"post-price", placeholder:"例）10000" %>
       </div>
     </div>
     <%# /投稿の詳細 %>
-
-    <%# 価格 %>
-    <div class="price-content">
-      <div class="price-text">
-        <span>価格</span>
-      </div>
-      <span class="sell-yen">¥</span>
-      <%= f.text_field :price, class:"price-input", id:"post-price", placeholder:"例）10000" %>
-    </div>
-    <%# /販売価格 %>
 
     <%# 下部ボタン %>
     <div class="sell-btn-contents">
