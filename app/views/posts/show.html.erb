@@ -6,25 +6,23 @@
     </h2>
     <div class='post-img-content'>
       <%= image_tag @post.image ,class:"post-box-img" %>
+      
     </div>
     <div class="post-price-box">
-      <span class="post-price">
+      <div class="post-price">
         ¥ <%= @post.price%>
-      </span>
+      </div>
+      <div>
+        <% if user_signed_in? && current_user.id == @post.user_id%>
+        <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-red-btn" %>
+        <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
+        <% end %>
+      </div>
     </div>
     
-    <%# 投稿者が見てる場合のみこちらを表示 %>
-    <% if user_signed_in? && current_user.id == @post.user_id%>
-      <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-red-btn" %>
-      <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
-    <% end %>
-    <%# //投稿者が見てる場合のみこちらを表示 %>
 
     <div class="post-explain-box">
       <span><%= @post.explain %></span>
-    </div>
-    <div class="post-other-box">
-      <span><%= @post.other %></span>
     </div>
 
     <table class="detail-table">
@@ -45,14 +43,18 @@
           <th class="detail-post">建物</th>
           <td class="detail-value"><%= @post.building %></td>
         </tr>
+        <tr>
+          <th class="detail-post">その他</th>
+          <td class="detail-value"><%= @post.other %></td>
+        </tr>
       </tbody>
     </table>
 
     <div class="comment-box">
     <% if user_signed_in? %>
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND", class: "comment-btn" %>
+        <%= form.text_area :text, class: "comment-text",placeholder: "コメントする", rows: "2" %>
+        <%= form.submit "送信", class: "comment-btn" %>
       <% end %>
     <% else %>
       <strong><p class="comment-warn">※※※ コメントの閲覧、投稿には新規登録/ログインが必要です ※※※</p></strong>
@@ -66,7 +68,7 @@
       <strong><p class="comment-warn">※※※ コメントはまだありません。一番乗りしましょう！ ※※※</p></strong>
     <% else %>
       <% @comments.each do |comment| %>
-        <p class="comment-text">
+        <p class="comment-box">
           <strong><%= comment.user.nickname %>：</strong>
           <%= comment.text %>
         </p>

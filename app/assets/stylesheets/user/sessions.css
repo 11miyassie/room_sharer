@@ -5,11 +5,12 @@
 }
 
 .login-red-btn {
-  width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: #4fb655;
+  border: 1px solid #4fb655;
   color: #fff;
-  line-height: 48px;
+  width: 100%;
+  line-height: 50px;
   font-size: 14px;
+  margin-bottom: 4vh;
   cursor: pointer;
 }

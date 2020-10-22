@@ -1,7 +1,9 @@
 /* 商品の概要 */
 
+
+
 .post-show {
-  background-color: #f8f8f8;
+  background-color: rgb(245, 245, 245);
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -37,40 +39,39 @@
   margin: 25px 0px;
   display: flex;
   align-items: center;
-  flex-direction: column;
 }
 
-.post-price-box>.post-price {
-  font-size: 4vh;
+.post-price {
+  font-size: 3vh;
   font-weight: bold;
 }
 
 .post-red-btn {
   text-align: center;
-  background-color: #ea352d;
-  font-size: 24px;
+  background-color: #2f3697;
+  font-size: 18px;
   font-weight: bold;
   color: #FFF;
-  margin: 20px 0px;
-  padding: 2vh 10vw;
+  margin-left: 35vw;
+  padding: 1vh 1vw;
 }
 
 .post-destroy {
   background-color: lightgray;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   color: black;
   margin: 20px 0px;
-  padding: 2vh 10vw;
+  padding: 1vh 1vw;
 }
 
 .post-explain-box {
-  font-size: 18px;
+  font-size: 20px;
   margin: 40px 0px;
 }
 
 .post-other-box {
-  font-size: 18px;
+  font-size: 20px;
   margin: 40px 0px;
 }
 
@@ -102,7 +103,7 @@
   width: 40vw;
   background-color: #fff;
   margin: 5vh 0;
-  text-align: center;
+  text-align: left;
 }
 
 .comment-text {
@@ -121,13 +122,12 @@
 }
 
 .comment-btn {
-  line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
+  line-height: 40px;
+  background-color: #4fb655;
+  border: 1px solid #4fb655;
   color: #fff;
-  width: 50%;
+  width: 30%;
   min-width: 150px;
   font-size: 18px;
-  border-radius: 100px;
   margin-bottom: 2vh;
 }

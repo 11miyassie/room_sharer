@@ -1,26 +1,40 @@
 .header {
-
+  width: 100vw;
+  padding: 2vh 15vw;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid black;
 }
 
 .nav {
-  background-color: rgb(216, 215, 215);
+  font-size: 18px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
 }
 
 .app-name {
-  background-color: aquamarine;
+  line-height: 32px;
+  color: #333333;
+  font-size: 90px;
 }
 
 .header-right {
-  display: flex;
-  background-color: beige;
+  list-style: none;
+  align-items: flex-end;
+  display: block;
 }
 
 .user-nickname {
-  background-color: bisque;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
 }
 
 .header-btn {
-  background-color: blanchedalmond;
+  line-height: 32px;
+  margin-right: 3vw;
+  color: #333333;
 }

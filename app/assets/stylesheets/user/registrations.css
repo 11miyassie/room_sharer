@@ -58,15 +58,17 @@
 }
 
 .form-group-gender{
-  width: 50%;
+  width: 70%;
   display: flex;
   margin: 0 auto;
   padding-top: 20px;
-  
+  justify-content: space-around;
+
 }
 
 .form-gender{
-  
+  font-size: 17px;
+
 }
 
 .input-birth-wrap {
@@ -97,11 +99,12 @@
 }
 
 .register-red-btn {
-  width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: #4fb655;
+  border: 1px solid #4fb655;
   color: #fff;
-  line-height: 48px;
+  width: 100%;
+  line-height: 50px;
   font-size: 14px;
+  margin-bottom: 4vh;
   cursor: pointer;
 }
