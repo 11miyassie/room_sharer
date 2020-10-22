@@ -1,0 +1,64 @@
+.main {
+  
+}
+
+.post-contents{
+
+}
+
+.post-lists{
+  
+}
+
+.list{
+  display: flex;
+  
+}
+
+.post{
+  display: flex;
+  
+}
+
+.post-left{
+  background-color: darkblue;
+  
+}
+
+.post-img{
+  height: 24vh;
+  width: 32vh;
+
+}
+
+.post-center{
+  background-color: darkgray;
+}
+
+.post-title{
+  
+}
+
+.post-explain{
+  
+}
+
+.post-right{
+  background-color: floralwhite;
+}
+
+.post-price{
+  
+}
+
+.post-local{
+  
+}
+
+.post-buidling{
+  
+}
+
+.post-date{
+  
+}

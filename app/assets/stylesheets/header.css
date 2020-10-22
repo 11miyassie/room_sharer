@@ -1,0 +1,26 @@
+.header {
+
+}
+
+.nav {
+  background-color: rgb(216, 215, 215);
+  display: flex;
+  justify-content: space-around;
+}
+
+.app-name {
+  background-color: aquamarine;
+}
+
+.header-right {
+  display: flex;
+  background-color: beige;
+}
+
+.user-nickname {
+  background-color: bisque;
+}
+
+.header-btn {
+  background-color: blanchedalmond;
+}

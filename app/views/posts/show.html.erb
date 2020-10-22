@@ -16,7 +16,6 @@
     <%# 投稿者が見てる場合のみこちらを表示 %>
     <% if user_signed_in? && current_user.id == @post.user_id%>
       <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-red-btn" %>
-      <p class='or-text'>or</p>
       <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
     <% end %>
     <%# //投稿者が見てる場合のみこちらを表示 %>
@@ -24,7 +23,7 @@
     <div class="post-explain-box">
       <span><%= @post.explain %></span>
     </div>
-    <div class="post-other--box">
+    <div class="post-other-box">
       <span><%= @post.other %></span>
     </div>
 
@@ -43,29 +42,31 @@
           <td class="detail-value"><%= @post.local %></td>
         </tr>
         <tr>
-          <th class="detail-post">建物の形式</th>
+          <th class="detail-post">建物</th>
           <td class="detail-value"><%= @post.building %></td>
         </tr>
       </tbody>
     </table>
-    <div class="container">
+
+    <div class="comment-box">
     <% if user_signed_in? %>
       <%= form_with(model: [@post, @comment], local: true) do |form| %>
         <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
+        <%= form.submit "SEND", class: "comment-btn" %>
       <% end %>
     <% else %>
-      <strong><p>※※※ コメントの閲覧、投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <strong><p class="comment-warn">※※※ コメントの閲覧、投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
-    <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+
+    <h4 class="comment-warn">＜コメント一覧＞</h4>
+
     <% if user_signed_in? == false %>
-      <strong><p>※※※ ////////////////////\\\\\\\\\\\\\\\\\\\\ ※※※</p></strong>
+      <strong><p> . </p></strong>
     <% elsif @comments.length == 0 %>
-      <strong><p>※※※ コメントはまだありません。一番乗りしましょう！ ※※※</p></strong>
+      <strong><p class="comment-warn">※※※ コメントはまだありません。一番乗りしましょう！ ※※※</p></strong>
     <% else %>
       <% @comments.each do |comment| %>
-        <p>
+        <p class="comment-text">
           <strong><%= comment.user.nickname %>：</strong>
           <%= comment.text %>
         </p>
@@ -75,5 +76,3 @@
   </div>
   <%# /商品の概要 %>
 </div>
-
-<%#69行目 マイページ実装後 <%= link_to comment.user.nickname, "/users/#{comment.user_id}" %> %>

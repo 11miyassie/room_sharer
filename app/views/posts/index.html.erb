@@ -6,33 +6,36 @@
       <% @posts.each do |post| %>
         <li class='list'>
           <%= link_to post_path(post) do %>
-          <div class='post-img-content'>
-            <%= image_tag post.image, class: "post-img" if post.image.attached?%>
-          </div>
-          <div class='post-info'>
-            <h3 class='post-title'>
-              <%= post.title %>
-            </h3>
-            <div class='post-price'>
-              <span><%= post.price %>円</span>
+          <div class="post">
+            <div class='post-left'>
+              <%= image_tag post.image, class: "post-img" if post.image.attached?%>
             </div>
-            <div class='post-local'>
-              <%= post.local %>
+            <div class='post-center'>
+              <h3 class='post-title'>
+                <%= post.title %>
+              </h3>
+              <div class='post-explain'>
+                <%= post.explain %>
+              </div>
             </div>
-            <div class='post-date'>
-              <%= post.created_at %>
-            </div>
-            <div class='post-explain'>
-              <%= post.explain %>
-            </div>
-            <div class='post-building'>
-              <%= post.building %>
+            <div class='post-right'>
+              <div class='post-price'>
+                <%= post.price %>円
+              </div>
+              <div class='post-local'>
+                <%= post.local %>
+              </div>
+              <div class='post-building'>
+                <%= post.building %>
+              </div>
+              <div class='post-date'>
+                <%= post.created_at %>
+              </div>
             </div>
           </div>
           <% end %>
         </li>
       <% end %>
-
     </ul>
   </div>
   <%# /商品一覧 %>

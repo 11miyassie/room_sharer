@@ -4,8 +4,6 @@
     <h2 class="posts-sell-title">物件の情報を入力</h2>
     <%= form_with model: @post, url:post_path, local: true do |f| %>
 
-    <%# <%= render 'shared/error_messages', model: f.object %> %>
-
     <%# 画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
@@ -51,7 +49,7 @@
         </div>
         <%= f.text_field :local, class:"posts-text", id:"post-local", placeholder:"お住まいの地域（60文字まで)", maxlength:"60" %>
         <div class="weight-bold-text">
-          建物の形式
+          建物
         </div>
         <%= f.text_field :building, class:"posts-text", id:"post-building", placeholder:"建物の形式（マンション、一軒家など)", maxlength:"40" %>
       </div>
