@@ -43,7 +43,7 @@
           <td class="detail-value"><%= @post.local %></td>
         </tr>
         <tr>
-          <th class="detail-post">建物タイプ</th>
+          <th class="detail-post">建物の形式</th>
           <td class="detail-value"><%= @post.building %></td>
         </tr>
       </tbody>
@@ -60,7 +60,7 @@
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
     <% if user_signed_in? == false %>
-      <strong><p>※※※ ---------------------------------------- ※※※</p></strong>
+      <strong><p>※※※ ////////////////////\\\\\\\\\\\\\\\\\\\\ ※※※</p></strong>
     <% elsif @comments.length == 0 %>
       <strong><p>※※※ コメントはまだありません。一番乗りしましょう！ ※※※</p></strong>
     <% else %>
