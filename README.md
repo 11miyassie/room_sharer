@@ -27,8 +27,8 @@
 
 [https://room-sharer.herokuapp.com/](url)
 
-
-<dl> **テスト用アカウント**
+**テスト用アカウント**
+<dl>
   <dt>Basic ID</dt>
   <dd>yusaku</dd>
   <dt>Basic Password</dt>
