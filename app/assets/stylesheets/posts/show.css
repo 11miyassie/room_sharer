@@ -35,15 +35,10 @@
   object-fit: contain;
 }
 
-.post-price-box {
-  margin: 25px 0px;
-  display: flex;
-}
-
 .post-price {
   font-size: 3vh;
-  font-weight: bold;
-  
+  font-weight: bold; 
+  margin: 16px 0;
 }
 
 .post-edit {

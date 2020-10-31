@@ -8,18 +8,8 @@
       <%= image_tag @post.image ,class:"post-box-img" %>
       
     </div>
-    <div class="post-price-box">
-      <div class="post-price">
-        ¥ <%= @post.price%>
-      </div>
-      <%# <投稿主のみの編集ボタンと削除ボタン> %>
-      <div>
-        <% if user_signed_in? && current_user.id == @post.user_id%>
-        <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-edit" %>
-        <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
-        <% end %>
-      </div>
-      <%# /<投稿主のみの編集ボタンと削除ボタン> %>
+    <div class="post-price">
+      ¥ <%= @post.price%>
     </div>
     
 
@@ -51,6 +41,14 @@
         </tr>
       </tbody>
     </table>
+    <%# <投稿主のみの編集ボタンと削除ボタン> %>
+    <div>
+      <% if user_signed_in? && current_user.id == @post.user_id%>
+      <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-edit" %>
+      <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
+      <% end %>
+    </div>
+    <%# /<投稿主のみの編集ボタンと削除ボタン> %>
     <%# <コメント欄> %>
     <div class="comment-box">
     <% if user_signed_in? %>
