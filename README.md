@@ -84,7 +84,7 @@
 | nickname         | string | null: false |
 | email            | string | null: false |
 | password         | string | null: false |
-| gender           | string | null: false |
+| gender           | integer| null: false |
 | birthday         | date   | null: false |
 
 ### Association
