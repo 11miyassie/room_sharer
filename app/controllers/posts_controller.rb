@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :move_to_show, only: [:edit, :destroy, :update]
 
   def index
-    @posts = Post.includes(:user).order("created_at DESC")
+    @posts = Post.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -21,9 +21,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    if user_signed_in? == false || @post.user_id != current_user.id
-      redirect_to action: :show
-    end
   end
 
   def show
@@ -58,8 +55,6 @@ class PostsController < ApplicationController
   end
 
   def move_to_show
-    if user_signed_in? == false || @post.user_id != current_user.id
-      redirect_to action: :show
-    end
+    redirect_to action: :show if user_signed_in? == false || @post.user_id != current_user.id
   end
 end

@@ -12,11 +12,11 @@ class User < ApplicationRecord
     validates :gender
   end
 
-  enum gender: { man: 0, woman: 1, other: 2}
+  enum gender: { man: 0, woman: 1, other: 2 }
 
   has_many :posts
   has_many :comments
 end
 
-#email validation, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-#password validation, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+# email validation, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+# password validation, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
