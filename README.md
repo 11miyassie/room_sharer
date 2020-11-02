@@ -18,6 +18,7 @@
 ## 実際使ってみましょう！
 
 [https://room-sharer.herokuapp.com/](url)
+https://room-sharer.herokuapp.com/
 
 **テスト用アカウント**
 <dl>
