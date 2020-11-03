@@ -45,35 +45,53 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: black;
 }
 
 .post-explain{
   border: solid 1px #2e2e2e42;
   height: 75%;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: black;
 }
 
 .post-right{
   width: 20%;
   border-left: solid 1px #2e2e2e42;
   display: block;
-  align-items: flex-start;
+  border: solid 1px #2e2e2e42;
 }
 
-.post-price{
-  
+.top-post-price{
+  font-weight: bold; 
+  height: 25%;
+  font-size: 130%;
+  padding: 10px 0;
+  color: black;
+  border-bottom: solid 2px #2e2e2e42;
 }
 
 .post-local{
-  
+  height: 25%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 0;
+  color: black;
 }
 
-.post-buidling{
-  
+.post-building{
+  height: 25%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px 0;
+  color: black;
 }
 
 .post-date{
-  
+  height: 25%;
+  padding: 10px 0;
+  color: #7e7e7e;
 }
