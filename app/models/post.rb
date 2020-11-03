@@ -5,9 +5,9 @@ class Post < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :explain
-    validates :prefecture_id
+    validates :prefecture_id, numericality: { other_than: 1 }
     validates :local
-    validates :price
+    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 999999 }
     validates :building
     validates :image
   end
