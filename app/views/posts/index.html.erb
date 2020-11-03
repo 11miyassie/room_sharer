@@ -29,7 +29,7 @@
                 <%= post.building %>
               </div>
               <div class='post-date'>
-                <%= time_ago_in_words(post.created_at) %>前
+                投稿日<%= l post.created_at, format: :long %>
               </div>
             </div>
           </div>
