@@ -23,7 +23,7 @@
       <div class="weight-bold-text">
         タイトル
       </div>
-      <%= f.text_field :title, class:"posts-text", id:"post-title", placeholder:"タイトル（40文字まで)", maxlength:"40" %>
+      <%= f.text_field :title, class:"posts-text", id:"post-title", placeholder:"タイトル（60文字まで)", maxlength:"60" %>
       <div class="posts-explain">
         <div class="weight-bold-text">
           物件説明
@@ -43,19 +43,19 @@
         <div class="weight-bold-text">
           都道府県
         </div>
-        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"post-prefecture"}) %>
+        <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"posts-text", id:"post-prefecture"}) %>
         <div class="weight-bold-text">
           地域
         </div>
-        <%= f.text_field :local, class:"posts-text", id:"post-local", placeholder:"お住まいの地域（60文字まで)", maxlength:"60" %>
+        <%= f.text_field :local, class:"posts-text", id:"post-local", placeholder:"お住まいの地域（20文字まで)", maxlength:"20" %>
         <div class="weight-bold-text">
           建物
         </div>
-        <%= f.text_field :building, class:"posts-text", id:"post-building", placeholder:"建物の形式（マンション、一軒家など)", maxlength:"40" %>
+        <%= f.text_field :building, class:"posts-text", id:"post-building", placeholder:"建物の形式（マンション、一軒家など)", maxlength:"20" %>
         <div class="weight-bold-text">
           価格 ¥
         </div>
-        <%= f.text_field :price, class:"posts-text", id:"post-price", placeholder:"例）10000" %>
+        <%= f.text_field :price, class:"posts-text", id:"post-price", placeholder:"0~999999まで（半角数字）" %>
       </div>
     </div>
     <%# /投稿の詳細 %>
