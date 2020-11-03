@@ -48,6 +48,8 @@
   text-overflow: ellipsis;
   color: black;
   margin: 0px;
+  font-weight: bold;
+  padding: 12px 0;
 }
 
 .top-post-explain{
