@@ -6,7 +6,6 @@
     </h2>
     <div class='post-img-content'>
       <%= image_tag @post.image ,class:"post-box-img" %>
-      
     </div>
     <div class="post-price">
       ¥ <%= @post.price%>
@@ -42,9 +41,9 @@
       </tbody>
     </table>
     <%# <投稿主のみの編集ボタンと削除ボタン> %>
-    <div>
+    <div class="owner-btn">
       <% if user_signed_in? && current_user.id == @post.user_id%>
-      <%= link_to '投稿の編集', edit_post_path, method: :get, class: "post-edit" %>
+      <%= link_to '編集', edit_post_path, method: :get, class: "post-edit" %>
       <%= link_to '削除', post_path, method: :delete, class:'post-destroy' %>
       <% end %>
     </div>
@@ -68,7 +67,7 @@
       <strong><p class="comment-warn">※※※ コメントはまだありません。一番乗りしましょう！ ※※※</p></strong>
     <% else %>
       <% @comments.each do |comment| %>
-        <p class="comment-box">
+        <p class="comment-content">
           <strong><%= comment.user.nickname %>：</strong>
           <%= comment.text %>
         </p>

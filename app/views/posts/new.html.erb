@@ -51,11 +51,11 @@
         <div class="weight-bold-text">
           建物
         </div>
-        <%= f.text_field :building, class:"posts-text", id:"post-building", placeholder:"建物の形式（マンション、一軒家など)", maxlength:"40" %>
+        <%= f.text_field :building, class:"posts-text", id:"post-building", placeholder:"建物の形式（マンション、一軒家など)", maxlength:"20" %>
         <div class="weight-bold-text">
           価格 ¥
         </div>
-        <%= f.text_field :price, class:"posts-text", id:"post-price", placeholder:"例）10000" %>
+        <%= f.text_field :price, class:"posts-text", id:"post-price", placeholder:"例）10000 (0~999999まで)" %>
       </div>
     </div>
     <%# /投稿の詳細 %>

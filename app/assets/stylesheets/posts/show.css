@@ -25,12 +25,13 @@
   text-align: center;
   font-weight: bold;
   font-size: 25px;
+  margin-bottom: 20px;
+  width: 60vw;
 }
 
 .post-box-img {
-  height: 50vh;
-  width: 60vw;
-  min-height: 500px;
+  height: 300px;
+  width: 400px;
   background-color: rgb(205, 202, 202);
   object-fit: contain;
 }
@@ -41,6 +42,12 @@
   margin: 16px 0;
 }
 
+.owner-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .post-edit {
   text-align: center;
   background-color: #2f3697;
@@ -48,16 +55,7 @@
   font-weight: bold;
   color: #FFF;
   padding: 1vh 1vw;
-}
-
-.post-red-btn {
-  text-align: center;
-  background-color: #2f3697;
-  font-size: 18px;
-  font-weight: bold;
-  color: #FFF;
-  margin-left: 35vw;
-  padding: 1vh 1vw;
+  margin-right: 3px;
 }
 
 .post-destroy {
@@ -65,13 +63,13 @@
   text-align: center;
   font-size: 18px;
   color: black;
-  margin: 20px 0px;
   padding: 1vh 1vw;
 }
 
 .post-explain-box {
   font-size: 20px;
   margin: 40px 0px;
+  width: 60vw;
 }
 
 .post-other-box {
@@ -81,7 +79,7 @@
 
 .detail-table {
   margin-bottom: 30px;
-  width: 100%;
+  width: 60vw;
 }
 
 .detail-post {
@@ -99,14 +97,12 @@
   font-size: 14px;
 }
 
-
-
 /* /商品の概要 */
 
 .comment-box {
   width: 40vw;
   background-color: #fff;
-  margin: 5vh 0;
+  margin: 8vh 0;
   text-align: left;
 }
 
@@ -134,4 +130,9 @@
   min-width: 150px;
   font-size: 18px;
   margin-bottom: 2vh;
+}
+
+.comment-content {
+  word-wrap: break-word;
+  margin: 20px 0;
 }
