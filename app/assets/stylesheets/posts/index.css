@@ -37,6 +37,7 @@
 
 .post-center{
   width: 55%;
+  display: block;
 }
 
 .post-title{
