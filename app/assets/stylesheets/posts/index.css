@@ -40,16 +40,17 @@
   display: block;
 }
 
-.post-title{
+.top-post-title{
   border: solid 1px #2e2e2e42;
   height: 25%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: black;
+  margin: 0px;
 }
 
-.post-explain{
+.top-post-explain{
   border: solid 1px #2e2e2e42;
   height: 75%;
   overflow: hidden;
