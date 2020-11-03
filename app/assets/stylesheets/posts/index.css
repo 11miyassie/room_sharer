@@ -60,9 +60,10 @@
 
 .post-right{
   width: 20%;
+  border-top: solid 1px #2e2e2e42;
   border-left: solid 1px #2e2e2e42;
+  border-bottom: solid 1px #2e2e2e42;
   display: block;
-  border: solid 1px #2e2e2e42;
 }
 
 .top-post-price{
@@ -72,6 +73,9 @@
   padding: 10px 0;
   color: black;
   border-bottom: solid 2px #2e2e2e42;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .post-local{
@@ -97,4 +101,6 @@
   padding: 10px 0;
   color: #7e7e7e;
   font-size: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

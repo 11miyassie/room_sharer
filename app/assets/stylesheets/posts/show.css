@@ -50,26 +50,28 @@
 
 .post-edit {
   text-align: center;
-  background-color: #2f3697;
-  font-size: 18px;
+  background-color: rgb(51, 51, 51);
+  font-size: 15px;
   font-weight: bold;
   color: #FFF;
-  padding: 1vh 1vw;
-  margin-right: 3px;
+  padding: 1vh 6vw;
+  margin-right: 5px;
 }
 
 .post-destroy {
   background-color: lightgray;
   text-align: center;
-  font-size: 18px;
+  font-size: 15px;
   color: black;
-  padding: 1vh 1vw;
+  padding: 1vh 4vw;
 }
 
 .post-explain-box {
   font-size: 20px;
   margin: 40px 0px;
   width: 60vw;
+  display: flex;
+  justify-content: center;
 }
 
 .post-other-box {
@@ -123,9 +125,9 @@
 
 .comment-btn {
   line-height: 40px;
-  background-color: #4fb655;
-  border: 1px solid #4fb655;
-  color: #fff;
+  background-color: #eee;
+  border: 1px solid black;
+  color: black;
   width: 30%;
   min-width: 150px;
   font-size: 18px;

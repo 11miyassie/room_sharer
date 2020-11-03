@@ -4,9 +4,9 @@
   margin-top: 50px;
 }
 
-.login-red-btn {
-  background: #4fb655;
-  border: 1px solid #4fb655;
+.login-btn-in {
+  background-color: rgb(51, 51, 51);
+  border: 1px solid black;
   color: #fff;
   width: 100%;
   line-height: 50px;
