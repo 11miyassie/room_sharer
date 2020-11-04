@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: room_sharer_production
-  username: room_sharer
-  password: <%= ENV['ROOM_SHARER_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
