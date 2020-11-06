@@ -17,7 +17,8 @@
 
 ## 実際使ってみましょう！
 
-https://room-sharer.herokuapp.com/
+### 環境<AWS>
+http://54.248.208.82/
 
 **テスト用アカウント**
 <dl>
