@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :nickname
+    validates :nickname, length: { maximum: 10 }
     validates :email
     validates :password
     validates :birthday

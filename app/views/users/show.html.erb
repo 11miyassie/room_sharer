@@ -1,2 +1,42 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class='main'>
+  <%# 商品一覧 %>
+  <div class='post-contents'>
+    <ul class='post-lists'>
+
+      <% @posts.each do |post| %>
+        <li class='list'>
+          <%= link_to post_path(post) do %>
+          <div class="post">
+            <div class='post-left'>
+              <%= image_tag post.image, class: "post-img" if post.image.attached?%>
+            </div>
+            <div class='post-center'>
+              <h3 class='top-post-title'>
+                <%= post.title %>
+              </h3>
+              <div class='top-post-explain'>
+                <%= post.explain %>
+              </div>
+            </div>
+            <div class='post-right'>
+              <div class='top-post-price'>
+                <%= post.price %>円
+              </div>
+              <div class='post-local'>
+                <%= post.local %>
+              </div>
+              <div class='post-building'>
+                <%= post.building %>
+              </div>
+              <div class='post-date'>
+                投稿日<%= l post.created_at, format: :long %>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <%# /商品一覧 %>
+</div>

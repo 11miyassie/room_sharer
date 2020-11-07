@@ -15,7 +15,7 @@
         <h1><a href="/" class="app-name">RoomSharer</a></h1>
         <ul class='header-right'>
         <% if user_signed_in? %>
-          <li><%= link_to current_user.nickname, user_path(:user_id), class: "header-btn" %></li>
+          <li><%= link_to current_user.nickname, user_path(current_user.id), class: "header-btn" %></li>
           <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn" %></li>
         <% else %>
           <li><%= link_to "ログイン", new_user_session_path, class: "header-btn" %></li>
