@@ -5,12 +5,23 @@
 }
 
 .login-btn-in {
-  background-color: rgb(51, 51, 51);
-  border: 1px solid black;
-  color: #fff;
+  background-color: #eee;
   width: 100%;
-  line-height: 50px;
-  font-size: 14px;
+  line-height: 40px;
   margin-bottom: 4vh;
   cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 2vh;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color:  #333333;
+  border: solid 1px  #333333;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.login-btn-in:hover {
+  background:  #a3a3a3;
+  color: white;
 }
