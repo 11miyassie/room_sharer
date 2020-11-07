@@ -2,6 +2,20 @@
   background-color: rgb(245, 245, 245);
 }
 
+.mypage {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 243, 223);
+  line-height: 50px;
+  color: #333333;
+  font-size: 20px;
+}
+
+.mypage:hover {
+  background: rgb(201, 199, 206);
+  color: white;
+}
+
 .post-contents{
   display: flex;
   justify-content: center;
