@@ -23,18 +23,25 @@
 
 .header-right {
   list-style: none;
-  align-items: flex-end;
-  display: block;
-}
-
-.user-nickname {
-  margin-right: 3vw;
-  color: #333333;
-  font-weight: bold;
+  align-items: center;
+  display: flex;
+  text-align: center;
 }
 
 .header-btn {
-  line-height: 32px;
-  margin-right: 3vw;
-  color: #333333;
+  /* line-height: 32px; */
+  margin-right: 20px;
+  width: 130px;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color:  #333333;
+  border: solid 2px  #333333;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.header-btn:hover {
+  background: #67c5ff;
+  color: white;
 }
