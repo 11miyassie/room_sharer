@@ -5,9 +5,9 @@
 .mypage {
   display: flex;
   justify-content: center;
-  background-color: rgb(255, 243, 223);
-  line-height: 50px;
+  background-color: rgb(255, 255, 255);
   color: #333333;
+  line-height: 50px;
   font-size: 20px;
 }
 
