@@ -1,7 +1,5 @@
 /* 商品の概要 */
 
-
-
 .post-show {
   background-color: rgb(245, 245, 245);
   width: 100vw;
@@ -9,6 +7,29 @@
   flex-direction: column;
   align-items: center;
   padding: 5vh 0;
+}
+
+.show-back{
+  display: flex;
+  justify-content: flex-start;
+  width: 60vw;
+  line-height: 5vh;
+}
+
+.show-back-btn {
+  background: rgb(245, 245, 245);
+  font-size: 20px;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color:  #333333;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.show-back-btn:hover {
+  background:  #c7c7c7;
+  color: white;
 }
 
 .post-box {
@@ -124,14 +145,25 @@
 }
 
 .comment-btn {
-  line-height: 40px;
   background-color: #eee;
   border: 1px solid black;
-  color: black;
   width: 30%;
   min-width: 150px;
   font-size: 18px;
   margin-bottom: 2vh;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color:  #333333;
+  border: solid 1px  #333333;
+  border-radius: 3px;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.comment-btn:hover {
+  background:  #a3a3a3;
+  color: white;
 }
 
 .comment-content {

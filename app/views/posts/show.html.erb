@@ -1,7 +1,10 @@
 <%# 商品の概要 %>
 <div class="post-show">
-  <div class="post-box">
+  <div class="show-back">
+    <%=link_to '＜ もどる', :back, class:"show-back-btn" %>
+  </div>
 
+  <div class="post-box">
     <h2 class="title">
       <%= @post.title %>
     </h2>
