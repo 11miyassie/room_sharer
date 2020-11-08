@@ -9,7 +9,7 @@
   <%= render "devise/shared/error_messages", model: f.object %>
 
   <div class="form-group">
-    <label class="form-text">ニックネーム</label>
+    <label class="form-text">ニックネーム（10文字まで）</label>
     <%= f.text_area :nickname, class:"input-default", id:"nickname", maxlength:"40" %>
   </div>
 
