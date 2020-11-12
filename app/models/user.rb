@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname, length: { maximum: 10 }
-    validates :email
-    validates :password
+    validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
     validates :birthday
     validates :gender
   end
@@ -17,6 +17,3 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
 end
-
-# email validation, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
-# password validation, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
