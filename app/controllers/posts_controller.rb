@@ -44,6 +44,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def search
+    @results = @p.result.includes(:genre)
+  end
+
   private
 
   def post_params
