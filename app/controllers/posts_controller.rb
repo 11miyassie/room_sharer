@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:genre)
+    @results = @p.result.includes(:prefecture)
   end
 
   private
@@ -62,3 +62,11 @@ class PostsController < ApplicationController
     redirect_to action: :show if user_signed_in? == false || @post.user_id != current_user.id
   end
 end
+
+  def search_post
+    @p = Post.ransack(params[:q])
+  end
+
+  def set_prefecture_column
+    @prefecture_name = Prefecture.select("name").distinct
+  end
