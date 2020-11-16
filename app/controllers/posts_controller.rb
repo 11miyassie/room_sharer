@@ -39,11 +39,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if @post.destroy
-      redirect_to posts_path
-    else
-      render :show
-    end
+    redirect_to root_path if @post.destroy
   end
 
   def search
