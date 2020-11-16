@@ -46,15 +46,22 @@ ActiveRecord::Schema.define(version: 2020_10_21_122854) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "explain", null: false
-    t.integer "prefecture_id", null: false
     t.text "local", null: false
     t.integer "price", null: false
     t.string "building", null: false
     t.string "other"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
+    t.bigint "prefecture_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["prefecture_id"], name: "index_posts_on_prefecture_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,5 +82,6 @@ ActiveRecord::Schema.define(version: 2020_10_21_122854) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "posts", "prefectures"
   add_foreign_key "posts", "users"
 end

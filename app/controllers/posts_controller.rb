@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_post, only: [:show, :edit, :destroy, :update]
   before_action :move_to_show, only: [:edit, :destroy, :update]
+  before_action :search_post, only: [:index, :search]
+  before_action :set_prefecture_column, only: [:index, :search]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -14,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to post_path(@post)
     else
       render :new
     end
@@ -37,15 +39,11 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    if @post.destroy
-      redirect_to posts_path
-    else
-      render :show
-    end
+    redirect_to root_path if @post.destroy
   end
 
   def search
-    @results = @p.result.includes(:prefecture)
+    @results = @p.result.includes(:prefecture).order('created_at DESC')
   end
 
   private
@@ -61,7 +59,6 @@ class PostsController < ApplicationController
   def move_to_show
     redirect_to action: :show if user_signed_in? == false || @post.user_id != current_user.id
   end
-end
 
   def search_post
     @p = Post.ransack(params[:q])
@@ -70,3 +67,4 @@ end
   def set_prefecture_column
     @prefecture_name = Prefecture.select("name").distinct
   end
+end
