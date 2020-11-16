@@ -119,6 +119,7 @@ http://54.248.208.82/
 - belongs_to :user
 - has_many :comments, dependent: :destroy
 - has_one_attached :image
+- belongs_to :prefecture
 
 
 ## comments テーブル
@@ -134,8 +135,19 @@ http://54.248.208.82/
 - belongs_to :user
 - belongs_to :post
 
+
+## prefectures テーブル
+
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| name          | string     | null: false                    |
+
+### Association
+
+- has_many :posts
+
+
 # 実装予定の機能
 - チャットルーム作成 & 非同期でのチャット機能
-- 検索機能
 - 登録カラムの追加
 - 複数画像投稿機能
