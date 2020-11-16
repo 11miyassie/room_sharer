@@ -14,33 +14,33 @@
   <div class='post-contents'>
     <ul class='post-lists'>
 
-      <% @posts.each do |post| %>
+      <% @results.each do |result| %>
         <li class='list'>
-          <%= link_to post_path(post) do %>
+          <%= link_to post_path(result) do %>
           <div class="post">
             <div class='post-left'>
-              <%= image_tag post.image, class: "post-img" if post.image.attached?%>
+              <%= image_tag result.image, class: "post-img" if result.image.attached?%>
             </div>
             <div class='post-center'>
               <h3 class='top-post-title'>
-                <%= post.title %>
+                <%= result.title %>
               </h3>
               <div class='top-post-explain'>
-                <%= post.explain %>
+                <%= result.explain %>
               </div>
             </div>
             <div class='post-right'>
               <div class='top-post-price'>
-                <%= post.price %>円
+                <%= result.price %>円
               </div>
               <div class='post-local'>
-                <%= post.local %>
+                <%= result.local %>
               </div>
               <div class='post-building'>
-                <%= post.building %>
+                <%= result.building %>
               </div>
               <div class='post-date'>
-                投稿日<%= l post.created_at, format: :long %>
+                投稿日<%= l result.created_at, format: :long %>
               </div>
             </div>
           </div>

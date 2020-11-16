@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :destroy, :update]
   before_action :move_to_show, only: [:edit, :destroy, :update]
   before_action :search_post, only: [:index, :search]
+  before_action :set_prefecture_column, only: [:index, :search]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to post_path(@post)
     else
       render :new
     end
@@ -46,7 +47,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:prefecture)
+    @results = @p.result.includes(:prefecture).order('created_at DESC')
   end
 
   private
