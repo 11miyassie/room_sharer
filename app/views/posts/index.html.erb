@@ -8,7 +8,7 @@
       〜 <%= f.search_field :price_lteq, class: "search-price", placeholder: "999999" %>円以下
       <br>
       <%= f.search_field :title_or_explain_or_local_or_building_or_other_cont, class: "search-keyword", placeholder:'キーワード' %>
-      <%= f.submit '検索' %>
+      <%= f.submit '検索', class: "search-submit",%>
     <% end %>
   </div>
   <%# 商品一覧 %>
