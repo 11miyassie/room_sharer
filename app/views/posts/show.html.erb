@@ -14,12 +14,11 @@
     <div class="post-price">
       ¥ <%= @post.price%>
     </div>
-    
 
     <div class="post-explain-box">
       <span><%= @post.explain %></span>
     </div>
-    
+
     <%# <投稿主のみの編集ボタンと削除ボタン> %>
     <div class="owner-btn">
       <% if user_signed_in? && current_user.id == @post.user_id%>

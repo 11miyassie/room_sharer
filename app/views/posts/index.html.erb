@@ -1,16 +1,13 @@
 <div class='main'>
-  <div>
+  <div class='search-form'>
     <%= search_form_for @p, url: posts_search_path do |f| %>
-      <%= f.label :title_or_explain_or_local_or_building_or_other_cont, 'キーワード：' %>
-      <%= f.search_field :title_or_explain_or_local_or_building_or_other_cont, placeholder:'例）駅から5分' %>
+      <%= f.collection_select :prefecture_name_eq, @prefecture_name, :name, :name, include_blank: '指定なし（ 都道府県 ）' %>
       <br>
-      <%= f.label :prefecture_name_eq, '都道府県：' %>
-      <%= f.collection_select :prefecture_name_eq, @prefecture_name, :name, :name, include_blank: '指定なし' %>
+      <%= f.search_field :price_gteq, placeholder: "0" %>円以上
       <br>
-      <%= f.label :price_eq, '価格：' %>
-      <%= f.search_field :price_gteq, placeholder: "例）5000" %>円以上〜
-      <%= f.search_field :price_lteq, placeholder: "例）10000" %>円以下
+      〜 <%= f.search_field :price_lteq, placeholder: "999999" %>円以下
       <br>
+      <%= f.search_field :title_or_explain_or_local_or_building_or_other_cont, placeholder:'キーワード' %>
       <%= f.submit '検索' %>
     <% end %>
   </div>
