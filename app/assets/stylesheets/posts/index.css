@@ -124,5 +124,21 @@
 .search-form{
   display: flex;
   justify-content: center;
+
+}
+
+.search-prefecture{
+
+}
+
+.search-price{
+
+}
+
+.search-keyword{
   
+}
+
+.search-submit{
+
 }
