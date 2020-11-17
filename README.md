@@ -3,7 +3,9 @@
 # アプリ紹介
 
 ### GIFで見る簡単な使い方
-[![Image from Gyazo](https://gyazo.com/8bb14d5a75a99d21d3b15ae0d330f161)](https://gyazo.com/7c68d1715b0b0ad10b162c9d3979fda7)(https://gyazo.com/f5a87a805ceafbcb42691c6bc7b7cbd9)
+[![Image from Gyazo](https://gyazo.com/8bb14d5a75a99d21d3b15ae0d330f161)]
+https://gyazo.com/7c68d1715b0b0ad10b162c9d3979fda7
+https://gyazo.com/f5a87a805ceafbcb42691c6bc7b7cbd9
 
 ## 実装機能
 
