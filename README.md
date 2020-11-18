@@ -113,8 +113,7 @@ http://54.248.208.82/
 - belongs_to :user
 - has_many :comments, dependent: :destroy
 - has_one_attached :image
-- belongs_to :prefecture
-  belongs_to_active_hash :prefecture
+- belongs_to_active_hash :prefecture
 
 
 ## comments テーブル
