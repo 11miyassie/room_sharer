@@ -3,11 +3,8 @@
 ## アプリ紹介
 
 ### GIFで見る簡単な使い方
-
-<dl>
-  <dt>物件投稿</dt>
-  <dd>[![Image from Gyazo](https://i.gyazo.com/c2ac1acb7cd230a778f00e7e6d3ab430.gif)](https://gyazo.com/c2ac1acb7cd230a778f00e7e6d3ab430)</dd>
-</dl>
+#### 物件投稿
+[![Image from Gyazo](https://i.gyazo.com/c2ac1acb7cd230a778f00e7e6d3ab430.gif)](https://gyazo.com/c2ac1acb7cd230a778f00e7e6d3ab430)
 
 
 ## 実装機能
