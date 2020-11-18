@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :search_post, only: [:index, :search]
 
   def index
-    @posts = Post.includes(:user).order('created_at DESC')
+    @posts = Post.all.order('created_at DESC')
   end
 
   def new
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:user).order('created_at DESC')
+    @results = @p.result.order('created_at DESC')
   end
 
   private
