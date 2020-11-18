@@ -104,8 +104,8 @@ http://54.248.208.82/
 | price         | integer    | null: false                    |
 | building      | string     | null: false                    |
 | other         | string     |                                |
-| user          | references | null: false, foreign_key: true |
-| prefecture    | references | null: false, foreign_key: true |
+| user          | references | foreign_key: true              |
+| prefecture    | integer    | null: false                    |
 
 
 ### Association
@@ -114,6 +114,7 @@ http://54.248.208.82/
 - has_many :comments, dependent: :destroy
 - has_one_attached :image
 - belongs_to :prefecture
+  belongs_to_active_hash :prefecture
 
 
 ## comments テーブル
@@ -128,14 +129,3 @@ http://54.248.208.82/
 
 - belongs_to :user
 - belongs_to :post
-
-
-## prefectures テーブル
-
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| name          | string     | null: false                    |
-
-### Association
-
-- has_many :posts
