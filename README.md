@@ -10,6 +10,9 @@
 [![Image from Gyazo](https://i.gyazo.com/ed11b14f8f5aaaf01fcc60dda6edb9c7.gif)](https://gyazo.com/ed11b14f8f5aaaf01fcc60dda6edb9c7)
 
 ### 検索
+[![Image from Gyazo](https://i.gyazo.com/da61d82374ab6e33b2e2cf8e791ddc81.gif)](https://gyazo.com/da61d82374ab6e33b2e2cf8e791ddc81)
+
+
 ## 実装機能
 
 <dl>
