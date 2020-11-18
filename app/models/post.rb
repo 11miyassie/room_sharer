@@ -7,7 +7,7 @@ class Post < ApplicationRecord
     validates :explain, length: { maximum: 1000 }
     validates :prefecture_id
     validates :local, length: { maximum: 20 }
-    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 999999 }
+    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 999_999 }
     validates :building, length: { maximum: 20 }
     validates :image
   end
