@@ -125,7 +125,7 @@
   display: flex;
   justify-content: center;
   padding: 40px 15% 40px 15%;
-  background:  rgb(250, 253, 255);
+  background:  white;
   border: 1px solid rgb(55, 140, 173);
   margin: 20px;
   border-radius: 4px;
@@ -133,7 +133,7 @@
 
 .search-keyword{
   width: 90%;
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid rgb(55, 140, 173);
   border-radius: 4px;
   height: 40px;
   line-height: 1.4em;
@@ -142,7 +142,8 @@
 
 .search-submit{
   width: 10%;
-  border-radius: 4px;
+  border: 1px solid rgb(180, 180, 180);
+  border-radius: 4px ;
   background: rgb(247, 247, 247);
   height: 40px;
   line-height: 1.4em;
@@ -150,10 +151,11 @@
 }
 
 .search-prefecture{
+
 }
 
 .search-price{
-  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid rgb(55, 140, 173);
   border-radius: 4px;
   height: 40px;
   line-height: 1.4em;

@@ -1,4 +1,7 @@
 <div class="posts-sell-contents">
+  <div class="show-back">
+    <%=link_to '＜ もどる', root_path, class:"show-back-btn" %>
+  </div>
 
   <div class="posts-sell-main">
     <h2 class="posts-sell-title">物件の情報を入力</h2>
@@ -61,9 +64,8 @@
     <%# /投稿の詳細 %>
 
     <%# 下部ボタン %>
-    <div class="sell-btn-contents">
-      <%= f.submit "投稿する", class:"sell-btn"%>
-      <%=link_to 'もどる', :back, class:"back-btn" %>
+    <div class="register-btn">
+      <%= f.submit "投稿する", class:"register-btn-in"%>
     </div>
     <%# /下部ボタン %>
   </div>
