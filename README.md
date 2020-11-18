@@ -3,10 +3,13 @@
 ## アプリ紹介
 
 ### GIFで見る簡単な使い方
-#### 物件投稿
+### 物件投稿
 [![Image from Gyazo](https://i.gyazo.com/c2ac1acb7cd230a778f00e7e6d3ab430.gif)](https://gyazo.com/c2ac1acb7cd230a778f00e7e6d3ab430)
 
+### コメント
+[![Image from Gyazo](https://i.gyazo.com/ed11b14f8f5aaaf01fcc60dda6edb9c7.gif)](https://gyazo.com/ed11b14f8f5aaaf01fcc60dda6edb9c7)
 
+### 検索
 ## 実装機能
 
 <dl>
