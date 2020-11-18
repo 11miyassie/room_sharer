@@ -3,7 +3,6 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :destroy, :update]
   before_action :move_to_show, only: [:edit, :destroy, :update]
   before_action :search_post, only: [:index, :search]
-  before_action :set_prefecture_column, only: [:index, :search]
 
   def index
     @posts = Post.includes(:user).order('created_at DESC')
@@ -62,9 +61,5 @@ class PostsController < ApplicationController
 
   def search_post
     @p = Post.ransack(params[:q])
-  end
-
-  def set_prefecture_column
-    @prefecture_name = Prefecture.select("name").distinct
   end
 end
