@@ -42,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:prefecture).order('created_at DESC')
+    @results = @p.result.includes(:user).order('created_at DESC')
   end
 
   private

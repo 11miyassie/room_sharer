@@ -11,7 +11,7 @@
             </div>
             <br>
             <div class="search-form-btm">
-              <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, class: "search-prefecture", include_blank: '指定なし（都道府県）' %>
+              <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, class: "search-prefecture", include_blank: '都道府県 指定なし' %>
               <%= f.search_field :price_gteq, class: "search-price", placeholder: "0" %>円以上
               〜 <%= f.search_field :price_lteq, class: "search-price", placeholder: "999999" %>円以下
             </div>
