@@ -83,7 +83,7 @@
 }
 
 .top-post-price{
-  font-weight: bold; 
+  font-weight: bold;
   height: 25%;
   font-size: 130%;
   padding: 10px 0;
@@ -124,21 +124,48 @@
 .search-form{
   display: flex;
   justify-content: center;
-
-}
-
-.search-prefecture{
-
-}
-
-.search-price{
-
+  padding: 40px 15% 40px 15%;
+  background:  rgb(250, 253, 255);
+  border: 1px solid rgb(55, 140, 173);
+  margin: 20px;
+  border-radius: 4px;
 }
 
 .search-keyword{
-  
+  width: 90%;
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  height: 40px;
+  line-height: 1.4em;
+  padding: 0px 50px 0px 10px;
 }
 
 .search-submit{
+  width: 10%;
+  border-radius: 4px;
+  background: rgb(247, 247, 247);
+  height: 40px;
+  line-height: 1.4em;
+  cursor: pointer;
+}
 
+.search-prefecture{
+}
+
+.search-price{
+  border: 1px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  height: 40px;
+  line-height: 1.4em;
+  padding: 0px 50px 0px 10px;
+  width: 25%;
+}
+
+.search-form-top{
+  display: flex;
+}
+
+.search-form-btm{
+  display: flex;
+  justify-content: space-between;
 }
