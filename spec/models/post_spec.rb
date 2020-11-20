@@ -1,3 +1,3 @@
 require 'rails_helper'
-RSpec.describe Item, type: :model do
+RSpec.describe Post, type: :model do
 end
