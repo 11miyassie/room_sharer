@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer     :price,            null: false
       t.string      :building,         null: false
       t.string      :other
+      # t.integer     :prefecture_idはAddColumnでマイグレーションしてる
       t.references  :user,             foreign_key: true
       t.timestamps
     end
