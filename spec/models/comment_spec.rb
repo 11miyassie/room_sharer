@@ -15,7 +15,7 @@ RSpec.describe Comment, type: :model do
       it "textが空だと登録できない" do
         @comment.text = ""
         @comment.valid?
-        expect(@comment.errors.full_messages).to include("Comment can't be blank")
+        expect(@comment.errors.full_messages).to include("Text can't be blank")
       end
     end
   end
