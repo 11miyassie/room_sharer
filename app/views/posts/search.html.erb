@@ -18,6 +18,10 @@
           <% end %>
         </div>
       </li>
+
+      <% if @results.length == 0 %>
+      <li class='no_result'>検索結果がありません</li>
+      <% else %>
       <% @results.each do |result| %>
         <li class='list'>
           <%= link_to post_path(result) do %>
@@ -50,6 +54,7 @@
           </div>
           <% end %>
         </li>
+      <% end %>
       <% end %>
     </ul>
   </div>
