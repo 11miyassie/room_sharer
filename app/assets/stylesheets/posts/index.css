@@ -171,3 +171,9 @@
   display: flex;
   justify-content: space-between;
 }
+
+.no_result{
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
