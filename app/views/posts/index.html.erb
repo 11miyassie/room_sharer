@@ -2,22 +2,8 @@
   <%# 商品一覧 %>
   <div class='post-contents'>
     <ul class='post-lists'>
-      <li class='list'>
-        <div class='search-form'>
-          <%= search_form_for @p, url: posts_search_path do |f| %>
-            <div class="search-form-top">
-              <%= f.search_field :title_or_explain_or_local_or_building_or_other_cont, class: "search-keyword", placeholder:'キーワードで検索する' %>
-              <%= f.submit '検索', class: "search-submit" %>
-            </div>
-            <br>
-            <div class="search-form-btm">
-              <%= f.collection_select :prefecture_id_eq, Prefecture.all, :id, :name, class: "search-prefecture", include_blank: '都道府県 指定なし' %>
-              <%= f.search_field :price_gteq, class: "search-price", placeholder: "0" %>円以上
-              〜 <%= f.search_field :price_lteq, class: "search-price", placeholder: "999999" %>円以下
-            </div>
-          <% end %>
-        </div>
-      </li>
+
+      <%= render partial: "posts/search", locals: { search: @searches } %>
 
       <%= render partial: "posts/post", locals: { post: @posts } %>
 
