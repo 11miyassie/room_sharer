@@ -1,11 +1,11 @@
 FactoryBot.define do
   factory :post do
-    title            {"物件名"}
-    explain          {"物件説明"}
-    prefecture_id    {2}
-    local            {"地域名"}
-    price            {10000}
-    building         {"マンション"}
+    title            { '物件名' }
+    explain          { '物件説明' }
+    prefecture_id    { 2 }
+    local            { '地域名' }
+    price            { 10_000 }
+    building         { 'マンション' }
 
     association :user
 
