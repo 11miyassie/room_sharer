@@ -6,7 +6,7 @@
       <%= render partial: "posts/search", locals: { search: @searches } %>
 
       <% if @results.length == 0 %>
-      <li class='no_result'>検索結果がありません</li>
+      <li class='no_result'>検索結果がありません。</li>
       <% else %>
       <% @results.each do |result| %>
         <li class='list'>
